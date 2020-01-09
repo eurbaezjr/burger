@@ -41,6 +41,7 @@ var orm = {
       cb(result);
     });
   },
+// Inserts one burger into sql database
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -71,19 +72,6 @@ var orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, result) {
-      if (err) {
-        throw err;
-      }
-
-      cb(result);
-    });
-  },
-  delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE ";
-    queryString += condition;
-
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
