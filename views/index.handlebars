@@ -15,7 +15,7 @@
         <li class="uneaten">
           {{id}}. {{burger_name}}
         </li>
-        <button class="devour-button btn btn-sm btn-light" data-id="{{id}}" data-state="false">Devour it Now!</button>
+        <button class="btn devour-button btn-light btn-sm" data-id="{{id}}" data-state="false">Devour it Now!</button>
       </div>
       {{/unless}}
       {{/each}}
@@ -27,17 +27,17 @@
     {{#if devoured}}
     <form>
       <label for="{{burger_name}}"></label>
-      <input class="devoured" type="text" placeholder="{{id}}. {{burger_name}}">
+      <input class="devoured" type="text" placeholder="{{id}}. {{burger_name}}" readonly>
     </form>
     {{/if}}
     {{/each}}
   </div>
 </div>
 
-<form class="text-center create-burger">
-  <textarea id="burger-input"></textarea>
+<form class="text-center new-burger">
+  <textarea id="user-input"></textarea>
   <br>
-  <button class="btn btn-sm btn-primary" type="submit">Submit</button>
+  <button id="submit" class="btn btn-sm btn-primary" type="submit">Submit</button>
 </form>
 
 <br>

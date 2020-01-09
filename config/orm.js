@@ -1,4 +1,3 @@
-
 var connection = require("../config/connection.js");
 
 function printQuestionMarks(num) {
@@ -31,9 +30,9 @@ function objToSql(ob) {
 }
 
 // Object for all our SQL statement functions.
-var orm = {
+const orm = {
   selectAll: function(tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+    const queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -43,7 +42,7 @@ var orm = {
   },
 // Inserts one burger into sql database
   insertOne: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table;
+    const queryString = "INSERT INTO " + table;
 
     queryString += " (";
     queryString += cols.toString();
@@ -64,7 +63,7 @@ var orm = {
   },
 
   updateOne: function(table, objColVals, condition, cb) {
-    var queryString = "UPDATE " + table;
+    const queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
